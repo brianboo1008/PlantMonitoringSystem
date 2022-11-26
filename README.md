@@ -23,9 +23,9 @@ protocol. Following figure shows the connections of the sensors and the ESP8266 
 ![schematic](/images/schematic_diagram.png)
 
 Parts Used :  
-+DHT-11 Temperature & Humidity Sensor  
-+BH1750 Ambient Light Sensor  
-+ESP8266 WiFi Module  
+1. DHT-11 Temperature & Humidity Sensor
+2. BH1750 Ambient Light Sensor
+3. ESP8266 WiFi Module  
 
 References : 
 1. https://techatronic.com/interfacing-of-dht11-sensor-with-esp8266-nodemcu/
@@ -34,7 +34,9 @@ References :
 ## Cloud Platform
 The sensors data will be uploaded to a Django application hosted by PythonAnywhere. Following is a sample Django application that prints "Hello!" on browser hosted by PythonAnywhere.  
   
-![Link to video demo](https://youtu.be/fbEuLwPSxxY)  
+[Link to video demo](https://youtu.be/fbEuLwPSxxY)  
+  
+
 The Django application hosted will be displaying the dashboard containing the information from the sensors connecting to the ESP8266 WiFi module.  
 
 ## Dashboard 
