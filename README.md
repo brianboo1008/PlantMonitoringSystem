@@ -2,11 +2,11 @@ This is a project by group Power Horses from SEEL4213 Software Engineering Secti
 
 # Plant Monitoring System
 **Table of Contents**
-### Problem Statement
-### System Acrhitecture 
-### Sensors
-### Cloud Platform
-### Dashboard
+[Go to problem statement](##Problem Statement)
+[Go to architecture](##System Architecture) 
+[Go to sensors](##Sensors)
+[Go to cloud](##Cloud Platform)
+[Go to dashboard](##Dashboard)
 
 ## Problem Statement
 
@@ -21,9 +21,10 @@ protocol. Following figure shows the connections of the sensors and the ESP8266 
 
 ![schematic](/images/schematic_diagram.png)
 
-Parts Used :	 DHT-11 Temperature & Humidity Sensor
-		 BH1750 Ambient Light Sensor
-		 ESP8266 WiFi Module
+Parts Used :
+DHT-11 Temperature & Humidity Sensor
+BH1750 Ambient Light Sensor
+ESP8266 WiFi Module
 
 References : 
 1. https://techatronic.com/interfacing-of-dht11-sensor-with-esp8266-nodemcu/
@@ -32,5 +33,6 @@ References :
 ## Cloud Platform
 The sensors data will be uploaded to a Django application hosted by PythonAnywhere. Following is a sample Django application that prints "Hello!" on browser hosted by PythonAnywhere.
 
+![pythonanywhere](https://youtu.be/fbEuLwPSxxY)
 
 ## Dashboard 
