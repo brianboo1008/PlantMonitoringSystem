@@ -10,7 +10,9 @@ This is a project by group Power Horses from SEEL4213 Software Engineering Secti
   
 
 ## Problem Statement
-
+In agriculture oriented country such as India, the rate at which water resources are depleting is a dangerous threat. Hence, a smart and efficient way is needed to supply water to the field which has water requirement.
+When the cropland are relatively wide, the moisture of the soil may be different. Hence, we think that humidity, temperature and light intensity may be the main factors in designing the system.
+In this project, we will use temperature & humidity sensor and ambient light sensor to implement a plant monitoring system that will distribute water to the field which has water requirement.
 
 ## System Architecture
 
