@@ -15,7 +15,7 @@ When the cropland are relatively wide, the moisture of the soil may be different
 In this project, we will use temperature & humidity sensor and ambient light sensor to implement a plant monitoring system that will distribute water to the field which has water requirement.
 
 ## System Architecture
-
+![schematic](/images/System_archi.jpeg)
 
 ## Sensors
 This project involves the usage of DHT-11 Temperature & Humidty Sensor to collect data regarding surrounding humidity and temperature and BH1750 Ambient Light Sensor to collect data regarding the
