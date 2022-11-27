@@ -1,12 +1,12 @@
 This is a project by group Power Horses from SEEL4213 Software Engineering Section 1
 
 # Plant Monitoring System
-**Table of Contents**  
-[Problem Statement](##Problem-Statement)  
-[System Architecture](##System-Architecture)   
-[Sensors](##Sensors)  
-[Cloud Platform](##Cloud-Platform)  
-[Dashboard](##Dashboard)  
+####**Table of Contents**  
+[Problem Statement](#Problem-Statement)  
+[System Architecture](#System-Architecture)   
+[Sensors](#Sensors)  
+[Cloud Platform](#Cloud-Platform)  
+[Dashboard](#Dashboard)  
   
 
 ## Problem Statement
