@@ -43,7 +43,8 @@ The Django application hosted will be displaying the dashboard containing the in
 
 ## Dashboard 
 
-![PlantMonitoringDashboard](https://user-images.githubusercontent.com/83630228/204231158-b9610a2b-2a21-4fd5-b2ed-c2791a1343a8.png)
-
-  The Plant Monitoring Dashboad is connected to the Arduino IoT Device through the intermediate cloud interface. There are 2 cluster of dashboards meant to provide monitoring to 3 variables that is **light intensity**, **Pressure** and **Humidity**. Each variable come with a chart that will collect and display the data overtime to provide better grasp on the evironment of the plant. The sensor is set to be collecting the data on fix time interval to reduce power consumption of the device.
-  With each dashboard there is an option as well to control the artificial sunlight and watering system. A scheduler is also implemented to provide automatic management onto the device above.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/83630228/204231158-b9610a2b-2a21-4fd5-b2ed-c2791a1343a8.png" alt="PlantMonitoringDashboard"/>
+</p>
+   The Plant Monitoring Dashboad is connected to the Arduino IoT Device through the intermediate cloud interface. There are 2 cluster of dashboards meant to provide monitoring to 3 variables that is **light intensity**, **Pressure** and **Humidity**. Each variable come with a chart that will collect and display the data overtime to provide better grasp on the evironment of the plant. The sensor is set to be collecting the data on fix time interval to reduce power consumption of the device.
+   With each dashboard there is an option as well to control the artificial sunlight and watering system. A scheduler is also implemented to provide automatic management onto the device above.
