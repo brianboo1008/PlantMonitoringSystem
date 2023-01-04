@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-lsix125p-5hs47xc*j)v$0%i52ytv1%z*7kb^zf^!j9sk4xoy5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['boospammer999.pythonanywhere.com','192.168.22.203']
+ALLOWED_HOSTS = ['boospammer999.pythonanywhere.com','192.168.22.87']
 
 
 # Application definition
@@ -88,7 +88,10 @@ DATABASES = {
         'NAME': 'boospammer999$GreenhouseMonitoring',
         'USER': 'boospammer999',
         'PASSWORD': 'ahboo123',
-        'HOST': 'boospammer999.mysql.pythonanywhere-services.com'
+        'HOST': 'boospammer999.mysql.pythonanywhere-services.com',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
@@ -116,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Singapore"
 
 USE_I18N = True
 

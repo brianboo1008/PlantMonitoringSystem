@@ -16,9 +16,10 @@ def status(request):
 def receivedata(request):
     if request.method == 'POST':
         temp = request.POST['temperature']
-        parameters.objects.update(temperature = temp)
+        #parameters.objects.insert(temperature = temp)
         humid = request.POST['humidity']
-        parameters.objects.update(humidity = humid)
+        #parameters.objects.insert(humidity = humid)
         light = request.POST['light_intensity']
-        parameters.objects.update(light_intensity = light)
+        #parameters.objects.create(light_intensity = light)
+        parameters.objects.create(temperature = temp, humidity = humid, light_intensity = light)
         return HttpResponse('POST request completed')

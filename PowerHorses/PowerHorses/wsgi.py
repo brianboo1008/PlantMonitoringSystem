@@ -4,7 +4,7 @@ import sys
 
 ## assuming your django settings file is at '/home/simplicat/mysite/mysite/settings.py'
 ## and your manage.py is is at '/home/simplicat/mysite/manage.py'
-path = '/home/boospammer999/PowerHorses'
+path = '/home/boospammer999/PlantMonitoringSystem/PowerHorses'
 if path not in sys.path:
     sys.path.append(path)
 
