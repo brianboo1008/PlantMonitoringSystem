@@ -33,7 +33,7 @@ String light_key = "&light_intensity=";
 // Initialize WiFi
 void initWiFi() {
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.print("Connecting to WiFi ..");
+  Serial.print("Connecting to WiFi ...");
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print('.');
     delay(1000);
