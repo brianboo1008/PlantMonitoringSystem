@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['boospammer999.pythonanywhere.com','192.168.22.87']
 # Application definition
 
 INSTALLED_APPS = [
-    "testing.apps.TestingConfig",
+    "greenhouse_monitoring.apps.GreenhouseMonitoringConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

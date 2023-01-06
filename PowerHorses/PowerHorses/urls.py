@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from testing import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('testing.urls')),
-#    path('',views.status),
+    path('',include('greenhouse_monitoring.urls')),
 ]
