@@ -3,7 +3,6 @@
   <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="10; URL=http://boospammer999.pythonanywhere.com/lightintensity">
     <title>Group PowerHorse</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://code.highcharts.com/highcharts.js"></script>
@@ -24,9 +23,8 @@
 			 <a class="navbar-brand">PowerHorse</a>
 			</div>
 				<ul class="nav navbar-nav">
-				  <li><a href="http://boospammer999.pythonanywhere.com/">Temperature</a></li>
-				  <li><a href="/humidity/">Humidity</a></li>
-				  <li class="active"><a href="/lightintensity/">Light Intensity</a></li>
+				  <li class=active><a href="http://boospammer999.pythonanywhere.com/">Dry Datae</a></li>
+				  <li><a href="/rain/">Rain Data</a></li>
 				</ul>
 			</div>
 		</div>
@@ -38,13 +36,17 @@
 		<script>
 				Highcharts.chart('container', {
 				chart: {
-					type: 'line'
-				},
-				time: {
+					type: 'spline',
+					events: {
+					 load() {
+						 this.showHideFlag = true;
+						}
+					}
+				},				time: {
 				    timezone: 'Asia/Kuala_Lumpur'
-				}
+				},
 				title: {
-					text: 'Light Intensity'
+					text: 'Dry Weather Data'
 				},
 				subtitle: {
 					text: 'Group PowerHorse '
@@ -54,21 +56,38 @@
 				},
 				yAxis: {
 					title: {
-						text: 'Light Intensity (Lux)'
+						text: 'Data Value'
 					}
+				},
+				data: {
+					columns: {{line_data|safe}},
+					enablePolling: true,
+					dataRefreshRate: 10
 				},
 				plotOptions: {
-					line: {
-						dataLabels: {
-							enabled: true
-						},
-						enableMouseTracking: true
+					spline: {
+						dataLabels: { enabled: true },
+						enableMouseTracking: true,
+						events: {
+							legendItemClick() {
+							  let chart = this.chart,
+								series = chart.series;
+							  if (this.index === 0) {
+								if (chart.showHideFlag) {
+								  series.forEach(series => {
+									series.hide()
+								  })
+								} else {
+								  series.forEach(series => {
+									series.show()
+								  })
+								}
+								chart.showHideFlag = !chart.showHideFlag;
+							  }
+							}
+						}
 					}
 				},
-				series: [{
-					name: 'Light Intensity',
-					data: {{line_data}}
-				}]
 			});
 		</script>
   </body>

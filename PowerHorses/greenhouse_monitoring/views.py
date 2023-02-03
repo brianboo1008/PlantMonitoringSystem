@@ -4,30 +4,49 @@ from .models import parameters
 from .models import nodeDetails
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models.functions import Now
-
+import numpy as np
 # Create your views here.
 from django.http import HttpResponse
 
-def temp(request):
+DVAR = 10
+def dry(request):
 # Data collection and fltering
-    temp = list(parameters.objects.values_list('temperature').order_by('id')[:10])
-    context = { 'line_data': json.dumps(temp)}
-    return render(request, 'greenhouse_monitoring/templates/temperature.html', context)
+    DVAR = min(15, parameters.objects.filter(raindrop__gte=800).count())
+    temp = list(parameters.objects.filter(raindrop__gte=800).values_list('temperature', flat=True).order_by('id')[:DVAR])
+    humid = list(parameters.objects.all().values_list('humidity', flat=True).order_by('id')[:DVAR])
+    light = list(parameters.objects.all().values_list('light_intensity', flat=True).order_by('id')[:DVAR])
+    t1 = parameters.objects.all().values('timestamp').datetimes('timestamp', 'second', 'DESC')[:DVAR]
+    time = [time.timestamp()*1000 for time in t1]
+    data=np.stack((time, temp, humid, light), axis=0).tolist()
+    data[0].insert(0, None)
+    data[1].insert(0, 'Temperature')
+    data[2].insert(0, 'Humidity')
+    data[3].insert(0, 'Light Intensity')
+    context={
+        'line_data': json.dumps(data)
+        }
 
-def humid(request):
-# Data collection and fltering
-    humid = list(parameters.objects.values_list('humidity').order_by('id')[:10])
-    context = { 'line_data': json.dumps(humid)}
-    return render(request, 'greenhouse_monitoring/templates/humidity.html', context)
+    return render(request, 'greenhouse_monitoring/templates/dry.html', context)
 
-def light(request):
+def rain(request):
 # Data collection and fltering
-    light = list(parameters.objects.values_list('light_intensity').order_by('id')[:10])
-    time = list(parameters.objects.values_list('timestamp').order_by('id')[:10])
-    context = {
-        'timestamp' : time,
-        'line_data': json.dumps(light)}
-    return render(request, 'greenhouse_monitoring/templates/lightintensity.html', context)
+    DVAR = min(15, parameters.objects.filter(raindrop__lte=800).count())
+    temp = list(parameters.objects.filter(raindrop__lte=800).values_list('temperature', flat=True).order_by('id')[:DVAR])
+    humid = list(parameters.objects.all().values_list('humidity', flat=True).order_by('id')[:DVAR])
+    light = list(parameters.objects.all().values_list('light_intensity', flat=True).order_by('id')[:DVAR])
+    t1 = parameters.objects.all().values('timestamp').datetimes('timestamp', 'second', 'DESC')[:DVAR]
+    time = [time.timestamp()*1000 for time in t1]
+    data=np.stack((time, temp, humid, light), axis=0).tolist()
+    data[0].insert(0, None)
+    data[1].insert(0, 'Temperature')
+    data[2].insert(0, 'Humidity')
+    data[3].insert(0, 'Light Intensity')
+    context={
+        'line_data': json.dumps(data)
+        }
+
+    return render(request, 'greenhouse_monitoring/templates/rain.html', context)
+
 
 @csrf_exempt
 def receivedata(request):
