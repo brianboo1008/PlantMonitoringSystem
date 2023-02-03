@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="10; URL=http://boospammer999.pythonanywhere.com/humidity">
+    <title>Group PowerHorse</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="https://code.highcharts.com/modules/series-label.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<nav class= "navbar navbar-inverse">
+
+		<div class= 'container-fluid' style="color:gray">
+
+			<div class= 'navbar-header'>
+			 <a class="navbar-brand">PowerHorse</a>
+			</div>
+				<ul class="nav navbar-nav">
+				  <li><a href="http://boospammer999.pythonanywhere.com/">Temperature</a></li>
+				  <li class="active"><a href="/humidity/">Humidity</a></li>
+				  <li><a href="/lightintensity/">Light Intensity</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+  </head>
+  <body>
+      <div id="container" style="width:100%; height:600px;"></div>
+		<style></style>
+		<script>
+				Highcharts.chart('container', {
+				chart: {
+					type: 'line'
+				},
+				title: {
+					text: 'Humidity'
+				},
+				subtitle: {
+					text: 'Group PowerHorse '
+				},
+				xAxis: {
+					categories: ['0700', '0800', '0900', '1000', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800','1900']
+				},
+				yAxis: {
+					title: {
+						text: 'Humidity (%)'
+					}
+				},
+				plotOptions: {
+					line: {
+						dataLabels: {
+							enabled: true
+						},
+						enableMouseTracking: true
+					}
+				},
+				series: [{
+					name: 'Humidity',
+					data: {{line_data}}
+				}]
+			});
+		</script>
+  </body>
+</html>
