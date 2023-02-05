@@ -54,9 +54,9 @@ The Django application hosted will be displaying the dashboard containing the in
 
 ## Relational Database Table
 The realtional database table of the system is shown below.
-![schematic](/images/dbmstable.jpeg)
+![schematic](/images/dbmstable.jpg)
 
 ## Results
 The results below shows the website interface of the system. In this wesite, the user can choose to view the data for the Dry Weather of the Rain Weather. Both of the charts shows the data for the light intensity, humidity and the temperature measurement collected from the sensors.The data are shown in a chart form so that the change or the trends of the data are more visible.  
-![schematic](/images/dryweather.jpeg)
-![schematic](/images/rainningweather.jpeg)
+![schematic](/images/dryweather.png)
+![schematic](/images/rainningweather.png)
