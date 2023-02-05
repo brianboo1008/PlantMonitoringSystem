@@ -28,7 +28,8 @@ protocol. Following figure shows the connections of the sensors and the ESP8266 
 Parts Used :  
 1. DHT-11 Temperature & Humidity Sensor
 2. BH1750 Ambient Light Sensor
-3. ESP8266 WiFi Module  
+3. MH-RD Raindrop Sensor Module
+4. ESP8266 WiFi Module  
 
 References : 
 1. https://techatronic.com/interfacing-of-dht11-sensor-with-esp8266-nodemcu/
@@ -50,3 +51,12 @@ The Django application hosted will be displaying the dashboard containing the in
 
    The Greenhouse Monitoring Dashboad is connected to the Arduino IoT Device through the intermediate cloud interface. There are 2 cluster of dashboards meant to provide monitoring to 3 variables that is light intensity, Pressure and Humidity. Each variable come with a chart that will collect and display the data overtime to provide better grasp on the evironment of the plant. The sensor is set to be collecting the data on fix time interval to reduce power consumption of the device.
    With each dashboard there is an option as well to control the artificial sunlight and watering system. A scheduler is also implemented to provide automatic management onto the device above.
+
+## Relational Database Table
+The realtional database table of the system is shown below.
+![schematic](/images/dbmstable.jpeg)
+
+## Results
+The results below shows the website interface of the system. In this wesite, the user can choose to view the data for the Dry Weather of the Rain Weather. Both of the charts shows the data for the light intensity, humidity and the temperature measurement collected from the sensors.The data are shown in a chart form so that the change or the trends of the data are more visible.  
+![schematic](/images/dryweather.jpeg)
+![schematic](/images/rainningweather.jpeg)
