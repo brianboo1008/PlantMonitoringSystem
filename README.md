@@ -6,7 +6,9 @@ This is a project by group Power Horses from SEEL4213 Software Engineering Secti
 [System Architecture](#System-Architecture)   
 [Sensors](#Sensors)  
 [Cloud Platform](#Cloud-Platform)  
-[Dashboard](#Dashboard)  
+[Dashboard](#Dashboard)
+[Relational Database Table](## Relational Database Table)
+[Results](## Results)
   
 
 ## Problem Statement
@@ -15,15 +17,13 @@ As per requirement, the moisture of the air may be different. Hence, we think th
 In this project, we will use temperature & humidity sensor and ambient light sensor to implement a plant monitoring system that will distribute water to the field which has water requirement.
 
 ## System Architecture
-![schematic](/images/System_archi.jpeg)
+![schematic](/images/archi.jpg)
 The sensor infomation will be transmitted to a Python/Django Application using ESP32. Then the application data will be stored into MySQL Database. Lastly, using a dashboard of our choice, the data will be display on the Dashboard.
 
 ## Sensors
-This project involves the usage of DHT-11 Temperature & Humidty Sensor to collect data regarding surrounding humidity and temperature and BH1750 Ambient Light Sensor to collect data regarding the
-surrounding lighting conditions. Both of the sensors will be connected to a ESP8266 WiFi module for control purposes and also for uploading their data to the cloud platform via HTTP communication
-protocol. Following figure shows the connections of the sensors and the ESP8266 WiFi module.  
+This project involves the usage of DHT-11 Temperature & Humidty Sensor to collect data regarding surrounding humidity and temperature, BH1750 Ambient Light Sensor to collect data regarding the surrounding lighting conditions and MH-RD raindrop Sensor Module to sense the present of rain. All of the sensors will be connected to a ESP8266 WiFi module for control purposes and also for uploading their data to the cloud platform via HTTP communication protocol. Following figure shows the connections of the sensors and the ESP8266 WiFi module.  
 
-![schematic](/images/schematic_diagram.png)
+![schematic](/images/schematic.jpg)
 
 Parts Used :  
 1. DHT-11 Temperature & Humidity Sensor
@@ -49,7 +49,7 @@ The Django application hosted will be displaying the dashboard containing the in
   <img src="https://user-images.githubusercontent.com/83630228/204231158-b9610a2b-2a21-4fd5-b2ed-c2791a1343a8.png" alt="PlantMonitoringDashboard"/>
 </p>
 
-   The Greenhouse Monitoring Dashboad is connected to the Arduino IoT Device through the intermediate cloud interface. There are 2 cluster of dashboards meant to provide monitoring to 3 variables that is light intensity, Pressure and Humidity. Each variable come with a chart that will collect and display the data overtime to provide better grasp on the evironment of the plant. The sensor is set to be collecting the data on fix time interval to reduce power consumption of the device.
+   The Greenhouse Monitoring Dashboad is connected to the Arduino IoT Device through the intermediate cloud interface. There are 2 cluster of dashboards meant to provide monitoring to 4 variables that is light intensity, temperature, humidity and the presence of raindrop. Each variable come with a chart that will collect and display the data overtime to provide better grasp on the evironment of the plant. The sensor is set to be collecting the data on fix time interval to reduce power consumption of the device.
    With each dashboard there is an option as well to control the artificial sunlight and watering system. A scheduler is also implemented to provide automatic management onto the device above.
 
 ## Relational Database Table
