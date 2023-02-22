@@ -7,7 +7,7 @@ This is a project by group Power Horses from SEEL4213 Software Engineering Secti
 [Sensors](#Sensors)  
 [Cloud Platform](#Cloud-Platform)  
 [Dashboard](#Dashboard)  
-[Relational Database Table](#Relational Database Table)  
+[Relational Database Table](#Relational-Database-Table)  
 [Results](#Results)  
   
 
