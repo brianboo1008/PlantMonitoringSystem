@@ -14,6 +14,7 @@ class parameters(models.Model):
         db_table = "parameters"
 
 class nodeDetails(models.Model):
+    #parameter = models.ForeignKey(parameters, on_delete=models.CASCADE)
     nodeID = models.CharField(max_length=255)
     nodePIC = models.CharField(max_length=255)
     nodePICContact = models.CharField(max_length=255)

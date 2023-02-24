@@ -31,19 +31,26 @@
 	</nav>
   </head>
   <body>
-      <div id="container" style="width:100%; height:600px;"></div>
+      <div id="container" style="width:100%; height:550px;"></div>
 		<style></style>
 		<script>
 				Highcharts.chart('container', {
 				chart: {
 					type: 'spline',
+					zoomType: 'xy',
+			        panning: {
+                        enabled: true,
+                        type: 'xy'
+                    },
+                    panKey: 'shift',
 					events: {
 					 load() {
 						 this.showHideFlag = true;
 						}
 					}
 				},				time: {
-				    timezone: 'Asia/Kuala_Lumpur'
+				    timezone: 'Asia/Kuala_Lumpur',
+				    useUTC: false
 				},
 				title: {
 					text: 'Dry Weather Data'
